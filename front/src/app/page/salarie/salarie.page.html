@@ -1,1 +1,14 @@
-<div>aaaa</div>
+<div class="navBar">
+  <strong>Salariés</strong>
+  <div class="searchContainer">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search" />
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<div style="padding-left: 16px">
+  <button (click)="openAdd()">Ajout</button>
+</div>
+<div *ngIf="isOpen">tafa</div>

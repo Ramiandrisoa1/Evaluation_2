@@ -5,7 +5,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./salarie.page.scss'],
 })
 export class SalariePageComponent implements OnInit {
+  public isOpen: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}
+
+  public openAdd() {
+    this.isOpen = !this.isOpen;
+  }
 }
