@@ -10,6 +10,22 @@
 
 <div style="padding-left: 16px">
   <button (click)="openAdd()">Ajout</button>
+  <div *ngFor="let salarieList of salaries">
+    <table>
+      <tr>
+        <td>Nom</td>
+        <td>Email</td>
+        <td>Poste</td>
+        <td>category</td>
+      </tr>
+      <tr>
+        <td>{{salarieList.Nom}}</td>
+        <td>{{salarieList.Email}}</td>
+        <td>{{salarieList.Poste}}</td>
+        <td>{{salarieList.category}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
 <div *ngIf="isOpen">
   <app-add-salarie></app-add-salarie>
