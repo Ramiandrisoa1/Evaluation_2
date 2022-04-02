@@ -1,78 +1,44 @@
 <div>
   <div class="header-dialog d-flex justify-content-between">
     <h2>Ajouter produit</h2>
-    <span (click)="closeDialog()">X</span>
   </div>
   <form class="form-scroll" [formGroup]="form">
     <div class="form-outline mb-4">
-      <label class="form-label" for="form3Example3">Title</label>
+      <label class="form-label" for="form3Example3">Nom</label>
       <input
-        type="title"
-        formControlName="title"
+        type="text"
+        formControlName="name"
         class="form-control form-control-lg"
-        placeholder="title"
+        placeholder="entrer votre nom"
         required
       />
-      <span class="error" *ngIf="submitted && f.title.errors"
-        >ce champ est requis</span
-      >
-    </div>
-
-    <div
-      class="form-outline mb-4"
-      *ngIf="sectors_types_company && sectors_types_company.length > 0"
-    >
-      <label class="form-label" for="form3Example3">Secteur types</label>
-      <div class="form-outline flex-fill mb-0">
-        <div
-          formArrayName="sectorsTypes"
-          *ngFor="let sector of sectors_types_company; let i = index"
-        >
-          <div class="form-check">
-            <input
-              mdbCheckbox
-              class="form-check-input"
-              type="checkbox"
-              [value]="sector.id"
-              [checked]="sectorsAdded.includes(sector?.id)"
-              [id]="sector.id"
-              (change)="onCheckboxChange($event)"
-            />
-            <label class="form-check-label" [for]="sector.id">
-              {{ sector.name }}
-            </label>
-          </div>
-        </div>
-        <span class="error" *ngIf="submitted && f.sectorsTypes.errors"
-          >ce champ est requis</span
-        >
-      </div>
     </div>
     <div class="form-outline mb-4">
-      <label class="form-label" for="form3Example3">Price</label>
+      <label class="form-label" for="form3Example3">Email</label>
       <input
-        type="number"
-        formControlName="price"
+        type="text"
+        formControlName="email"
         class="form-control form-control-lg"
-        placeholder="price"
+        placeholder="entrer votre Email"
       />
-      <span class="error" *ngIf="submitted && f.price.errors"
-        >ce champ est requis</span
-      >
     </div>
     <div class="form-outline mb-4">
-      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-      <label class="form-label" for="form3Example3">Descriptions</label>
-      <textarea
-        type="descriptions"
-        formControlName="descriptions"
-        id="form3Example3"
+      <label class="form-label" for="form3Example3">Poste</label>
+      <input
+        type="text"
+        formControlName="poste"
         class="form-control form-control-lg"
-        placeholder="Ce champs est requis"
-      ></textarea>
-      <span class="error" *ngIf="submitted && f.descriptions.errors"
-        >ce champ est requis</span
-      >
+        placeholder="entrer votre poste"
+      />
+    </div>
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form3Example3">Catégory</label>
+      <input
+        type="text"
+        formControlName="category"
+        class="form-control form-control-lg"
+        placeholder="entrer votre Catégory"
+      />
     </div>
 
     <div class="d-flex justify-content-end">
