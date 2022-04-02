@@ -1,8 +1,9 @@
 const express = require('express');
-const { addSalarie } = require('../controllers/salarie.controller');
+const { addSalarie, getSalarie } = require('../controllers/salarie.controller');
 
 const router = express.Router();
 
-router.post('/add', addSalarie);
+router.post('/add-salarie', addSalarie);
+router.get('/list-salarie', getSalarie);
 
 module.exports = { routes: router };

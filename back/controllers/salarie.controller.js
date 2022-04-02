@@ -12,6 +12,16 @@ const addSalarie = async (req, res) => {
   }
 };
 
+const getSalarie = async (req, res) => {
+  try {
+    const salarie = await Salarie.find({});
+    return res.status(201).json(salarie);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
 module.exports = {
   addSalarie,
+  getSalarie,
 };
