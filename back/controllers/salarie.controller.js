@@ -21,7 +21,19 @@ const getSalarie = async (req, res) => {
   }
 };
 
+const getSalarieByEmail = async (req, res) => {
+  try {
+    const salarie = await Salarie.find({
+      email: req.params.email,
+    });
+    return res.status(201).json(salarie);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
 module.exports = {
   addSalarie,
   getSalarie,
+  getSalarieByEmail,
 };
